@@ -1,3 +1,6 @@
+"use client"; 
+
+
 const page = () => {
     
     return(
