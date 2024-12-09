@@ -1,20 +1,37 @@
-import React from "react"
-import { notFound } from "next/navigation";
+import ProductDetail from "@/app/components/productDetail";
+import React from "react";
 
-
-function page({params}: { params: {productID: string } }) {
-    const  { productID } = params
-
-//     const existingProducts = ["1", "2", "3"]; // IDs de productos válidos
-
-//     if (!existingProducts.includes(productID)) {
-//     notFound(); // Redirige automáticamente a la página `not-found`
-//   }
-
-    return(
-        <div>
-            <h1>Producto con el id {productID} de mi pagina dinamica </h1>
-        </div>
-    )
+interface PageProps {
+  params: { productID: string };
 }
-export default page;
+
+const Page = async ({ params }: PageProps) => {
+  // Aseguramos que params.productID se acceda correctamente
+  const productID = params.productID;
+
+  if (!productID) {
+    return (
+      <div>
+        <h1>Error: No se proporcionó un ID del producto.</h1>
+      </div>
+    );
+  }
+  console.log("Params recibidos:", params);
+
+  return (
+    <div>
+      <ProductDetail id={productID} />
+    </div>
+  );
+
+
+};
+
+
+console.log(process.env.NEXT_PUBLIC_API_URL);
+
+
+export default Page;
+
+
+

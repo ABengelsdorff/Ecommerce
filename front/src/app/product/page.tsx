@@ -1,34 +1,40 @@
-"use client"
 import React from "react";
-import { products } from "../components/utils/Products";
-import { Button } from "@nextui-org/react";
+import { getProducts } from "../services";
+import { IProducts } from "../components/interface";
+import CardProduct from "../components/card/page";
+import Link from "next/link";
 
 
 
-export const Cards:React.FC = () => {
+export default async function Products() {
+  const products = await getProducts()
+
+  console.log('Productos obtenidos: ', products);
+
   return (
-    <div className="container mx-auto p-4 py-4" >
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+    <div className="container mx-auto p-4 py-4">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        {products.map((product) => (
-          <li key={product.id}  className="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition-shadow">
-            <h3 className="text-2xl font-bold mb-4 text-center">{product.name}</h3>
-            <p className="text-gray-600 mb-2">{product.description}</p>
-            <p className="font-bold text-gray-800 mb-2">Price: ${product.price}</p>
-            <p className="text-sm text-gray-500 mb-4">Stock: {product.stock}</p>
-            <img src={product.image} alt={product.name} className="object-cover rounded-xl" width={270}/>
+      {products.map((product: IProducts) => (
 
-
-            <Button color="primary" variant="shadow">
-        Ver Producto
-      </Button> 
-
-          </li>
+        <Link key={product.id} href={`/product/${product.id}`}>
+          <CardProduct
+          id={product.id}
+          name= {product.name}
+          description={product.description}
+          price={product.price}
+          stock={product.stock}
+          image={product.image}
+          />
+        </Link>
         ))}
       </ul>
+      
     </div>
+    
   );
+  
 };
 
-export default Cards;
+
 

@@ -43,7 +43,7 @@ export const products:IProducts[] = [
       "description": "Immerse yourself in sound with the AirPods Pro: active noise cancellation, transparency mode, and customizable fit make the AirPods Pro the perfect companion for music, calls, and everything in between. Elevate your audio experience with the AirPods Pro.",
       "price": 249,
       "stock": 10,
-      "image": "https://www.macstation.com.ar/web/image/product.image/525/image_1024/AirPods%20Pro%20%282nd%20generation%29?unique=edd59f1",
+      "image": "https://i.blogs.es/9aa9ce/airpods-pro-3/500_333.jpeg",
       "categoryId": 5
     },
     {
@@ -52,7 +52,7 @@ export const products:IProducts[] = [
       "description": "Elevate your home audio experience with the HomePod mini: immersive sound, intelligent assistant, and smart home hub make the HomePod mini the perfect addition to your home. Enjoy a world of music, news, and more with the HomePod mini.",
       "price": 99,
       "stock": 10,
-      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-og-202110?wid=600&hei=315&fmt=jpeg&qlt=95&.v=1719505542711",
+      "image": "https://img.youtube.com/vi/861Dt8Fy0IA/maxresdefault.jpg",
       "categoryId": 6
     }
   ]
