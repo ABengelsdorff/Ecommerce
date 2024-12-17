@@ -1,8 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { IProducts } from "./interface";
-import { getProductsById } from "../services";
-import { Image } from "@nextui-org/react";
+import { IProducts } from "./card/interface";
+import { getProductsById } from "../services/productServices";
+
+import CardProductDetail from "./card/cardProductDetail/page";
+import useUserDataStore from "@/store";
+
+import { toast } from 'sonner'
+
+
 
 interface PropsProductDetail {
   id: string;
@@ -10,6 +16,19 @@ interface PropsProductDetail {
 
 const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
   const [producto, setProducto] = useState<IProducts | null>(null);
+  const { userData } = useUserDataStore()
+
+
+const addToCart = () => {
+  if(userData?.token) {
+    toast.success("Producto agregado al carrito")
+
+  }
+  if (!userData?.token) {
+    toast.error("Debes iniciar sesion para agregar productos al carrito")
+  }
+}
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,12 +48,17 @@ const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
   }
 
   return (
-    <div>
-      <h1>{producto.name}</h1>
-      <p>{producto.description}</p>
-      <Image src={producto.image} alt={producto.name} />
-      <p>Precio: {producto.price}</p>
-    </div>
+
+    <CardProductDetail
+      name={producto.name}
+      description={producto.description}
+      image={producto.image}
+      price={producto.price}
+      addToCart={addToCart}
+    />
+
+   
+
   );
 }
 

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Button } from "@nextui-org/react";
-import { IProducts } from "../interface";
+import { IProducts } from "./interface";
 import { Image } from "@nextui-org/react";
 
 const CardProduct: React.FC<IProducts> = ({
@@ -23,8 +23,8 @@ const CardProduct: React.FC<IProducts> = ({
         className="object-cover rounded-xl"
         width={270}
       />
-      <Button color="primary" variant="shadow">
-        Ver Producto
+      <Button color="primary" variant="flat" >
+        Agregar al carrito
       </Button>
     </li>
   );

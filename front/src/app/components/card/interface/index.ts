@@ -8,5 +8,11 @@ export interface IProducts {
     categoryId?: number
 }
 
+export interface IProductDetail {
+    name: string,
+    description: string,
+    image: string,
+    price: number,
+}
 
 

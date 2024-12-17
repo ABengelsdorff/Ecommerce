@@ -1,4 +1,4 @@
-import { IProducts } from "../interface"
+import { IProducts } from "../card/interface"
 
 export const products:IProducts[] = [
     {

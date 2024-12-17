@@ -1,6 +1,6 @@
 import React from "react";
-import { getProducts } from "../services";
-import { IProducts } from "../components/interface";
+import { getProducts } from "../services/productServices";
+import { IProducts } from "../components/card/interface";
 import CardProduct from "../components/card/page";
 import Link from "next/link";
 

@@ -3,9 +3,12 @@
 import { Input, Button } from "@nextui-org/react";
 import { useForm, Controller } from "react-hook-form";
 import { ValidationRegister } from "../utils/ReglasRegister";
-import RegisterData from "./InterfaceRegister";
+import IRegisterData from "./InterfaceRegister";
+import { registerUserService } from "@/app/services/authServices"; 
+import { useRouter } from "next/navigation";
 
 const RegisterForm = () => {
+  const router = useRouter()
   const {
     handleSubmit, control, formState: { errors }} = useForm({
     defaultValues: {
@@ -20,7 +23,10 @@ const RegisterForm = () => {
     mode: "onChange",
   });
 
-  const onSubmit = (data: RegisterData) => {
+  const onSubmit = async (data: IRegisterData) => {
+    const res = await registerUserService(data);
+    if(res) alert("Usuario Creado");
+    router.push("/login")
     console.log(data);
   };
 
@@ -145,13 +151,7 @@ const RegisterForm = () => {
           <span className="text-red-600">{errors.phone.message}</span>
         )}
 
-
-
-
-
-
-
-        <Button type="submit">Registrarse</Button>
+        <Button color="primary" variant="flat" type="submit">Registrarse</Button>
       </form>
     </div>
   );

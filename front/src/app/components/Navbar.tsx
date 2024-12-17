@@ -2,10 +2,22 @@
 import React from "react";
 import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
 import {AcmeLogo} from "./AcmeLogo";
+import useUserDataStore from "@/store"
+import { useRouter } from "next/navigation";
+
 
 
 const NavbarMain = () => {
+  const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const { userData, setUserData} = useUserDataStore()
+
+    const handleLogout = () => {
+      setUserData(null); // Limpia el estado de usuario
+      localStorage.removeItem("token"); // Opcional, elimina el token si se usa
+      router.push("/") // Redirige al inicio
+    };
+
 
     return(
         <Navbar
@@ -50,21 +62,52 @@ const NavbarMain = () => {
         </NavbarItem>
 
       </NavbarContent>
+
+
+       {/* Botones de sesión */}
       <NavbarContent justify="end">
-        
-       
-        <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
-            Registrarse
-          </Button>
-        </NavbarItem>
-        
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Serrar Sesion</Link>
-        </NavbarItem>
+        {!userData?.token ? (
+          <>
+
+            <NavbarItem>
+              <Button as={Link} color="primary" href="/login" variant="flat">
+                Iniciar Sesión
+              </Button>
+            </NavbarItem>
+            <NavbarItem>
+              <Button as={Link} color="primary" href="/register" variant="flat">
+                Registrarse
+              </Button>
+            </NavbarItem>
+            
+          </>
+        ) : (
+          <NavbarItem>
+            <Button color="danger" onClick={handleLogout} variant="flat">
+              Cerrar Sesión
+            </Button>
+          </NavbarItem>
+        )}
       </NavbarContent>
 
-       {/* Pantallas pequeññas */}
+      {userData?.token && (
+          <>
+
+
+
+
+            <NavbarItem>
+              <p color="primary">
+                {userData.user.name}
+              </p>
+            </NavbarItem>
+            
+          </>
+        )}
+
+
+
+       {/* Pantallas pequeñas */}
        <NavbarMenu>
         <NavbarMenuItem>
           <Link className="w-full" color="foreground" href="/product" size="lg">
@@ -73,7 +116,7 @@ const NavbarMain = () => {
         </NavbarMenuItem>
         
         <NavbarMenuItem>
-          <Link className="w-full" color="warning" href="/shopping-cart" size="lg">
+          <Link className="w-full" color="foreground" href="/shopping-cart" size="lg">
             Carrito de Compras
           </Link>
         </NavbarMenuItem>
@@ -84,13 +127,8 @@ const NavbarMain = () => {
           </Link>
         </NavbarMenuItem>
 
-        <NavbarMenuItem>
-          <Link className="w-full" color="danger" href="/logout" size="lg">
-            Cerrar Sesión
-          </Link>
-        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
-    )
+    );
 }
 export default NavbarMain;

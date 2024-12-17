@@ -1,4 +1,4 @@
-import { IProducts } from "../components/interface";
+import { IProducts } from "../components/card/interface";
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL
 

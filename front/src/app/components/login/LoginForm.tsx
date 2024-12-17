@@ -3,9 +3,17 @@
 import { Input, Button } from "@nextui-org/react";
 import { useForm, Controller } from "react-hook-form";
 import { ValidationRules } from "../utils/ReglasForm";
-import FromData from "./interfaceLogin";
+import IFromData from "./InterfaceLogin";
+import { loginService } from "@/app/services/authServices";
+import useUserDataStore from "@/store";
+
+import { useRouter } from "next/navigation";
+
 
 const LoginForm = () => {
+  const router = useRouter();
+  const { setUserData } = useUserDataStore()
+
   const {
     handleSubmit,
     control,
@@ -17,7 +25,17 @@ const LoginForm = () => {
     mode: "onChange",
   });
 
-  const onSubmit = (data: FromData) => {
+  const onSubmit = async (data: IFromData) => {
+    const response = await loginService(data)
+
+    localStorage.setItem("token", response.token);
+    localStorage.setItem("user", JSON.stringify(response.user));
+
+    setUserData(response)
+
+    if(response) alert("Usuario logueado correctamente")
+      router.push("/")
+
     console.log(data);
   };
 

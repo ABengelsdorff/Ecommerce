@@ -1,6 +1,6 @@
-interface FromData {
+interface IFromData {
     email: string,
     password: string,
 }
 
-export default FromData
+export default IFromData

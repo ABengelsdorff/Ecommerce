@@ -1,4 +1,4 @@
-interface RegisterData{
+interface IRegisterData{
     name: string,
     email: string,
     password: string,
@@ -7,4 +7,4 @@ interface RegisterData{
     phone: string,
 }
 
-export default RegisterData
+export default IRegisterData
