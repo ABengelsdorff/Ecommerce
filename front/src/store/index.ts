@@ -1,24 +1,50 @@
+import { IProducts } from "@/app/components/cardProduct/interface";
+import IFromData from "@/app/components/login/InterfaceLogin";
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
+interface UserDataType{
+    login:boolean,
+    user: IFromData
+    token:string,
+}
+
+
 interface EcommerceStore {
-    userData: any;
-    setUserData: (data: any) => void;
+    cart: IProducts[];
+    setCart: (data: IProducts[]) => void;
+    userData: UserDataType | null;
+    setUserData: (data: UserDataType | null) => void;
 }
 
 const useUserDataStore = create<EcommerceStore>()(
     devtools(
         persist(
             (set) => ({
-                userData: null,
+                userData: {
+                    login: false,
+                    user:{
+                        id: 0,
+                        name: "",
+                        email: "",
+                        password:"",
+                        address:"",
+                        phone:"",
+                    },
+                    token:"",
+                },
+                cart: [],
+                setCart: (data) => set({ cart: data }),
                 setUserData: (data) => set({userData : data}),
             }),
             {
                 name: "ecommerce-storage",
-                storage: createJSONStorage( () => sessionStorage),
+                storage: createJSONStorage( () => sessionStorage), //AQUI PODRIA SER UN LocalStorage
             }
         )
     )
 )
 
 export default useUserDataStore;
+
+

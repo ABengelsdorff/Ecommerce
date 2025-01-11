@@ -41,7 +41,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link href="#" className="text-black hover:text-red-600 transition-colors duration-300">
+                <Link href="/" className="text-black hover:text-red-600 transition-colors duration-300">
                 Volver al inicio
                 </Link>
               </li>
@@ -53,14 +53,14 @@ const Footer = () => {
           <div>
             <h2 className="text-black text-lg font-semibold mb-4">Contáctanos</h2>
             <p className="mb-2">📞 +1 234 567 890</p>
-            <p>✉️ contacto@tucompañia.com</p>
+            <p>✉️ contacto@innova.com</p>
           </div>
         </div>
 
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-gray-800 text-sm">
-          <p>&copy; {new Date().getFullYear()} Tu Compañía. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Innova. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

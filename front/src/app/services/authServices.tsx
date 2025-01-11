@@ -1,6 +1,7 @@
 import IFromData from "../components/login/InterfaceLogin";
 import IRegisterData from "../components/register/InterfaceRegister";
 
+
 const apiURL = process.env.NEXT_PUBLIC_API_URL
 
 export async function registerUserService(userData: IRegisterData) {
@@ -17,13 +18,12 @@ export async function registerUserService(userData: IRegisterData) {
         if(response.ok) {
             return response.json()
         } else {
-            alert(response.statusText)
-            throw new Error(response.statusText);
+            throw new Error('Registration failed: ' + response.statusText);
         }
        
         
     } catch (error) {
-        throw new Error((error as Error).message)
+        throw new Error('Error: ' + (error as Error).message)
     }
 }
 
@@ -42,12 +42,11 @@ export async function loginService(userData: IFromData) {
         if(response.ok) {
             return response.json()
         } else {
-            alert(response.statusText)
-            throw new Error(response.statusText);
+            throw new Error('Usuario o contraseña incorrectos');
         }
        
         
     } catch (error) {
-        throw new Error((error as Error).message)
+        throw new Error('Error: ' + (error as Error).message);
     }
 }

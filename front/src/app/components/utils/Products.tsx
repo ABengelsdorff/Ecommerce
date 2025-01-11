@@ -1,4 +1,4 @@
-import { IProducts } from "../card/interface"
+import { IProducts } from "../cardProduct/interface" 
 
 export const products:IProducts[] = [
     {
@@ -34,7 +34,7 @@ export const products:IProducts[] = [
       "description": "Stay connected and healthy with the Apple Watch Series 6: track your workouts, monitor your health, and stay in touch with the people and information you care about most. Experience the future of health and wellness with the Apple Watch Series 6.",
       "price": 399,
       "stock": 10,
-      "image": "https://m.media-amazon.com/images/I/516lAFj-xUL._AC_SL1000_.jpg",
+      "image": "https://i0.wp.com/digitalstation.com.ar/wp-content/uploads/2022/05/product-1-1.webp?fit=820%2C680&ssl=1",
       "categoryId": 4
     },
     {
@@ -43,7 +43,7 @@ export const products:IProducts[] = [
       "description": "Immerse yourself in sound with the AirPods Pro: active noise cancellation, transparency mode, and customizable fit make the AirPods Pro the perfect companion for music, calls, and everything in between. Elevate your audio experience with the AirPods Pro.",
       "price": 249,
       "stock": 10,
-      "image": "https://i.blogs.es/9aa9ce/airpods-pro-3/500_333.jpeg",
+      "image": "https://store.glaretum.com/cdn/shop/products/MQD83.jpg?v=1667410016",
       "categoryId": 5
     },
     {
@@ -52,7 +52,7 @@ export const products:IProducts[] = [
       "description": "Elevate your home audio experience with the HomePod mini: immersive sound, intelligent assistant, and smart home hub make the HomePod mini the perfect addition to your home. Enjoy a world of music, news, and more with the HomePod mini.",
       "price": 99,
       "stock": 10,
-      "image": "https://img.youtube.com/vi/861Dt8Fy0IA/maxresdefault.jpg",
+      "image": "https://static.k-tuin.com/media/catalog/product/cache/1/image/640x640/0dc2d03fe217f8c83829496872af24a0/h/o/homepod-mini-en-color-naranja.jpg",
       "categoryId": 6
     }
   ]

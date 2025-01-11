@@ -1,8 +1,8 @@
-import { IProducts } from "../components/card/interface";
+import { IProducts } from "../components/cardProduct/interface";
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL
 
-export async function getProducts () {
+export async function getProducts (): Promise<IProducts[]> {
     try {
         const res = await fetch(`${apiURL}/products`, {
             method: "GET",

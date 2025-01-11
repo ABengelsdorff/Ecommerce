@@ -2,10 +2,11 @@
 
 import { Input, Button } from "@nextui-org/react";
 import { useForm, Controller } from "react-hook-form";
-import { ValidationRegister } from "../utils/ReglasRegister";
+import { ValidationRegister } from "../utils/RulesRegister";
 import IRegisterData from "./InterfaceRegister";
 import { registerUserService } from "@/app/services/authServices"; 
 import { useRouter } from "next/navigation";
+import Swal from 'sweetalert2'
 
 const RegisterForm = () => {
   const router = useRouter()
@@ -25,7 +26,19 @@ const RegisterForm = () => {
 
   const onSubmit = async (data: IRegisterData) => {
     const res = await registerUserService(data);
-    if(res) alert("Usuario Creado");
+
+
+    if(res) 
+      
+       Swal.fire({
+              title: "Usuario creado correctamente!",
+              icon: "success",
+              draggable: true,
+              customClass: {
+                confirmButton: "custom-button",
+              }
+            });
+      
     router.push("/login")
     console.log(data);
   };

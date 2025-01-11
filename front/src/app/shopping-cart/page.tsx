@@ -1,11 +1,11 @@
-"use client"; 
-
+import CartProducts from "../components/CartProducts";
 
 const page = () => {
     
     return(
-
-        <h1>Este es mi carrito de compras</h1>
+        <>
+        <CartProducts/>
+        </>
     )
 }
 export default page;

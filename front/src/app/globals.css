@@ -19,6 +19,26 @@ body {
 }
 
 
+/*Estilos botón Sweet Alert*/
+
+.custom-button {
+  background-color: #1c8ffa; /* Azul primario */
+  color: white; /* Texto blanco */
+  padding: 8px 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  text-decoration: none; /* Quitar subrayado */
+  font-size: 16px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  display: inline-block; /* Comportamiento inline */
+  transition: 0.5s ease; /* Animación suave */
+  border: 2px solid transparent; /* Sin borde visible */
+}
+.custom-button:hover {
+  background-color: rgb(15, 121, 243);
+}
+
+
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

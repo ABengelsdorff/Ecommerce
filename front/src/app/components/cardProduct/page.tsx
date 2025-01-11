@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
-import { Button } from "@nextui-org/react";
+import { Button, Image, Link } from "@nextui-org/react";
+
 import { IProducts } from "./interface";
-import { Image } from "@nextui-org/react";
+
 
 const CardProduct: React.FC<IProducts> = ({
+  id,
   name,
   description,
   price,
@@ -12,7 +14,7 @@ const CardProduct: React.FC<IProducts> = ({
   image,
 }) => {
   return (
-    <li className="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition-shadow">
+    <li className="shadow-lg rounded-lg p-4 hover:shadow-xl transition-shadow ">
       <h3 className="text-2xl font-bold mb-4 text-center">{name}</h3>
       <p className="text-gray-600 mb-2">{description}</p>
       <p className="font-bold text-gray-800 mb-2">Price: ${price}</p>
@@ -22,10 +24,13 @@ const CardProduct: React.FC<IProducts> = ({
         alt={name}
         className="object-cover rounded-xl"
         width={270}
+        height={270}
       />
-      <Button color="primary" variant="flat" >
-        Agregar al carrito
-      </Button>
+      <Link href={`/product/${id}`}>
+        <Button color="primary" variant="flat" className="w-full mt-2">
+          Ver detalle del producto
+        </Button>
+      </Link>
     </li>
   );
 };

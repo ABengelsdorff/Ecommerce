@@ -2,12 +2,16 @@ import ProductDetail from "@/app/components/productDetail";
 import React from "react";
 
 interface PageProps {
-  params: { productID: string };
+  params: Promise<{ productID: string }>; //! Acá indica que params es una promesa
 }
 
 const Page = async ({ params }: PageProps) => {
-  // Aseguramos que params.productID se acceda correctamente
-  const productID = params.productID;
+
+  console.log("Params recibidos:", params);
+ 
+  const resolvedParams = await params; //! Espera a que params se resuelva
+  const productID = resolvedParams.productID;
+  
 
   if (!productID) {
     return (
@@ -16,17 +20,14 @@ const Page = async ({ params }: PageProps) => {
       </div>
     );
   }
-  console.log("Params recibidos:", params);
+  console.log("Params recibidos:", resolvedParams);
 
   return (
     <div>
       <ProductDetail id={productID} />
     </div>
   );
-
-
 };
-
 
 console.log(process.env.NEXT_PUBLIC_API_URL);
 
