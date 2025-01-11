@@ -1,11 +1,11 @@
 import { IProducts } from "@/app/components/cardProduct/interface";
-import IFromData from "@/app/components/login/InterfaceLogin";
+import IRegisterData from "@/app/components/register/InterfaceRegister";
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
 interface UserDataType{
     login:boolean,
-    user: IFromData
+    user: IRegisterData
     token:string,
 }
 

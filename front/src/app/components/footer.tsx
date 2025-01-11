@@ -23,8 +23,8 @@ const Footer = () => {
             <ul>
 
               <li>
-                <Link href="/about" className="hover:text-red-600 transition-colors duration-300">
-                  Sobre Nosotros
+                <Link href="/" className="text-black hover:text-red-600 transition-colors duration-300">
+                Inicio
                 </Link>
               </li>
 
@@ -33,6 +33,13 @@ const Footer = () => {
                   Productos
                 </Link>
               </li>
+              
+              <li>
+                <Link href="/about" className="hover:text-red-600 transition-colors duration-300">
+                  Sobre Nosotros
+                </Link>
+              </li>
+
 
               <li>
                 <Link href="/shopping-cart" className="hover:text-red-600 transition-colors duration-300">
@@ -40,11 +47,6 @@ const Footer = () => {
                 </Link>
               </li>
 
-              <li>
-                <Link href="/" className="text-black hover:text-red-600 transition-colors duration-300">
-                Volver al inicio
-                </Link>
-              </li>
 
             </ul>
           </div>

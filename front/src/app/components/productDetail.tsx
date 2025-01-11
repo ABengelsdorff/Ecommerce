@@ -75,8 +75,15 @@ const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
       try {
         const productResponse = await getProductsById(id);
         setProducto(productResponse);
-      } catch (error) {
-        console.error(error);
+
+      } catch {
+        toast.error("Hubo un problema al cargar el producto,", {duration: 3000, style: {
+          color: '#dc3545', 
+          background: '#f8d7da',  
+          borderRadius: '8px',  
+          padding: '16px', 
+          border: '1px solid #f5c6cb',
+      }})
       }
     };
 
@@ -86,9 +93,11 @@ const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
   //Si el array está vacío ([]), el efecto solo se ejecutará una vez, al montar el componente.
 
   if (!producto) {
-    return <p>Producto no encontrado...</p>;
+    return <div className="flex items-center justify-center h-screen">
+    <p className="text-gray-500 text-lg">Producto no encontrado...</p>
+  </div>
+    
   }
-  console.log(producto)
 
   return (
 
@@ -101,7 +110,6 @@ const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
       addToCart={addToCart}
     />
 
-   
 
   );
 }

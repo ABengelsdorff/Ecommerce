@@ -24,10 +24,6 @@ export async function getProductsById(id : string) {
         if(!product) throw new Error ("Producto no encontrado");
         return product
     } catch (error) {
-
-        console.log("Error en getProductById " , error)
-        
         throw new Error (error as string);
-        
     }
 }

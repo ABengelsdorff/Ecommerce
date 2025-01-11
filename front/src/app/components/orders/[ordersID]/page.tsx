@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@nextui-org/react";
 
 interface Product {
   name: string;
@@ -47,15 +48,15 @@ const OrdersDetail: React.FC<OrdersDetailProps> = ({ order, onBack }) => {
 </ul>
 
 
-      <button
+      <Button
   onClick={() => {
     onBack(); // Llama a la función para volver a la lista de órdenes
     window.scrollTo({ top: 0, behavior: "smooth" }); // Desplaza la ventana al inicio
   }}
-  className="mt-6 py-2 px-4 bg-gray-800 text-white rounded-md"
+color="primary" variant="flat"
 >
   Volver a la lista de órdenes
-</button>
+</Button>
     </div>
   );
 };

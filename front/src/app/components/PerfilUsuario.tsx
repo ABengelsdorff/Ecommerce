@@ -33,8 +33,9 @@ const PerfilUsuario: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 max-w-7xl mx-auto">
+      
       {/* Información del usuario */}
-      <div className="flex flex-col justify-center items-center space-y-6 bg-white p-6 rounded-lg shadow-md h-full">
+      <div className="flex flex-col  items-center space-y-6 bg-white p-6 rounded-lg shadow-md h-full">
         <h1 className="text-3xl font-bold text-gray-800">Información del Usuario</h1>
         <div className="space-y-2 text-center">
           <p>
