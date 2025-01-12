@@ -44,9 +44,34 @@ function CartProducts() {
         return;
       }
 
-      const idProducts = cart.map((product: IProducts) => product.id).filter(id => id !== undefined) as number[];
+      // const idProducts = cart
+      // .map((product: IProducts) => product.id)
+      // .filter((id): id is number => id !== undefined);
+    
 
-      const res = await createOrderService(idProducts, userData!.user.id, userData!.token); // El operador `!` asegura a TypeScript que no es null
+      // const res = await createOrderService(idProducts, userData!.user.id, userData!.token); // El operador `!` asegura a TypeScript que no es null
+
+       // Validar IDs de productos
+    const idProducts = cart
+    .map((product: IProducts) => product.id)
+    .filter((id): id is number => id !== undefined);
+
+  // Validar datos del usuario
+  const userId = userData?.user?.id;
+  const token = userData?.token;
+
+  if (!userId || !token) {
+    toast.error("Faltan datos del usuario para completar la compra.", { duration: 3000 });
+    setIsLogging(false);
+    return;
+  }
+
+  // Llamada al servicio
+  const res = await createOrderService(idProducts, userId, token);
+
+
+
+
 
       if (res?.status === "approved") {
         toast.success("Compra realizada con éxito", {
