@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 import { IProductDetail } from "../interface"; 
 import { Image } from "@nextui-org/react";
 
-interface CardProductDetailProps extends IProductDetail {
+export interface CardProductDetailProps extends IProductDetail {
   addToCart: () => void; // Prop para la función addToCart
   id: string;
 }
@@ -14,8 +14,8 @@ const CardProductDetail: React.FC<CardProductDetailProps> = ({
   id,
   name,
   description,
-  price,
   image,
+  price,
   addToCart,
 }) => {
   return (
@@ -57,3 +57,4 @@ const CardProductDetail: React.FC<CardProductDetailProps> = ({
 };
 
 export default CardProductDetail;
+
