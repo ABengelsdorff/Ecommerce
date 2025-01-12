@@ -1,5 +1,5 @@
-import IFromData from "../components/login/InterfaceLogin";
-import IRegisterData from "../components/register/InterfaceRegister";
+import IFromData from "../../components/login/InterfaceLogin";
+import IRegisterData from "../../components/register/InterfaceRegister";
 
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL

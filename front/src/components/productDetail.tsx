@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { IProducts } from "./cardProduct/interface";
-import { getProductsById } from "../services/productServices";
+import { getProductsById } from "../app/services/productServices";
 
 import CardProductDetail from "./cardProduct/cardProductDetail/page";
 import useUserDataStore from "@/store";

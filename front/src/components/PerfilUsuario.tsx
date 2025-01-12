@@ -1,7 +1,7 @@
 "use client";
 import useUserDataStore from "@/store";
 import React, { useEffect, useState, useCallback } from "react";
-import { getOrdersService } from "../services/orderServices";
+import { getOrdersService } from "../app/services/orderServices";
 import OrdersList from "./orders/page";
 
 const PerfilUsuario: React.FC = () => {

@@ -4,7 +4,7 @@ import useUserDataStore from "@/store";
 import React, { useEffect, useState, useCallback } from "react";
 import { Button } from "@nextui-org/react";
 import { IProducts } from "./cardProduct/interface";
-import { createOrderService } from "../services/orderServices";
+import { createOrderService } from "../app/services/orderServices";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";

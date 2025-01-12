@@ -1,4 +1,4 @@
-import ProductDetail from "@/app/components/productDetail";
+import ProductDetail from "@/components/productDetail";
 import React from "react";
 
 interface PageProps {

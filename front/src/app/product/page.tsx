@@ -1,7 +1,7 @@
 import React from "react";
 import { getProducts } from "../services/productServices";
-import { IProducts } from "../components/cardProduct/interface";
-import CardProduct from "../components/cardProduct/page";
+import { IProducts } from "../../components/cardProduct/interface";
+import CardProduct from "../../components/cardProduct/page";
 
 
 export default async function Products() {

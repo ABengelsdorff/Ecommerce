@@ -1,5 +1,5 @@
 import React from "react";
-import PerfilUsuario from "../components/PerfilUsuario";
+import PerfilUsuario from "../../components/PerfilUsuario";
 
 const Page: React.FC = () => {
 

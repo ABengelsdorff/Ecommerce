@@ -1,5 +1,5 @@
-import { IProducts } from "@/app/components/cardProduct/interface";
-import IRegisterData from "@/app/components/register/InterfaceRegister";
+import { IProducts } from "@/components/cardProduct/interface";
+import IRegisterData from "@/components/register/InterfaceRegister";
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
