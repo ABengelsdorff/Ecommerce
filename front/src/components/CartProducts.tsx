@@ -44,7 +44,7 @@ function CartProducts() {
         return;
       }
 
-      const idProducts = cart.map((product: IProducts) => product.id);
+      const idProducts = cart.map((product: IProducts) => product.id).filter(id => id !== undefined) as number[];
 
       const res = await createOrderService(idProducts, userData!.user.id, userData!.token); // El operador `!` asegura a TypeScript que no es null
 
