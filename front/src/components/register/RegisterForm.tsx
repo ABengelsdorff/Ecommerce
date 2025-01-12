@@ -8,6 +8,9 @@ import { registerUserService } from "@/app/services/authServices";
 import { useRouter } from "next/navigation";
 import Swal from 'sweetalert2'
 
+
+type RegisterFormData = Omit<IRegisterData, "id">;
+
 const RegisterForm = () => {
   const router = useRouter()
   const {
@@ -24,7 +27,7 @@ const RegisterForm = () => {
     mode: "onChange",
   });
 
-  const onSubmit = async (data: IRegisterData) => {
+  const onSubmit = async (data: RegisterFormData) => {
     const res = await registerUserService(data);
 
 
