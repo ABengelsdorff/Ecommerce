@@ -41,7 +41,7 @@ export const ValidationRegister = {
             value: true,
             message: "La confirmación de la contraseña es requerida"
         },
-        validate: (value, allValues) => 
+        validate: (value:string, allValues: {password?: string}) => 
             value === allValues.password || "Las contraseñas no coinciden"
     },
     
