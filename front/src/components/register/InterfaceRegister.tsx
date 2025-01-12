@@ -1,5 +1,5 @@
-interface IRegisterData{
-    id?: number,
+export interface IRegisterData{
+    id: number,
     name: string,
     email: string,
     password: string,
