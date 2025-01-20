@@ -18,7 +18,9 @@ const CardProductDetail: React.FC<CardProductDetailProps> = ({
   image,
   addToCart,
 }) => {
+
   return (
+
     <div className="mt-8 p-8 rounded-lg shadow-xl max-w-md mx-auto relative">
       
       <div className="flex justify-center mb-6">
@@ -42,6 +44,7 @@ const CardProductDetail: React.FC<CardProductDetailProps> = ({
         <p className="font-bold text-gray-800 mb-4 text-xl">
           Price: ${price}
         </p>
+        
         <Button
           id={id}
           onClick={addToCart}

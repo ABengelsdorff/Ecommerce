@@ -80,7 +80,6 @@ const Home = () => {
                 <h4 className="text-white font-medium text-large">Protege tu mundo digital con las mejores herramientas</h4>
               </div>
               <Image
-                isBlurred
                 isZoomed
                 alt="Card background"
                 className="w-110 h-80 object-cover rounded-lg"
@@ -95,7 +94,6 @@ const Home = () => {
                 <h4 className="text-white font-medium text-large">Adéntrate en el mundo de las posibilidades infinitas</h4>
               </div>
               <Image
-                isBlurred
                 isZoomed
                 alt="Card background"
                 className="w-110 h-80 object-cover rounded-lg"

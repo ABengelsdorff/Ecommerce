@@ -18,14 +18,15 @@ import useUserDataStore from "@/store";
 import { useRouter } from "next/navigation";
 import { ShoppingCart } from "lucide-react";
 
+
 const NavbarMain = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { userData, cart, setUserData } = useUserDataStore();
+  const { cart, userData, setUserData } = useUserDataStore();
 
   const handleLogout = () => {
     if (typeof window !== "undefined") {
-      localStorage.removeItem("token"); // Elimina el token
+      sessionStorage.removeItem("token"); // Elimina el token
     }
     setUserData(null); // Limpia el estado de usuario
     router.push("/"); // Redirige al inicio
@@ -124,7 +125,8 @@ const NavbarMain = () => {
         </>
       )}
 
-      {/* Menú para pantallas pequeñas */}
+      {/* Menú desplegable para pantallas pequeñas (visible cuando el menú hamburguesa está abierto) */}
+
       <NavbarMenu>
         <NavbarMenuItem>
           <Link className="w-full" color="foreground" href="/product" size="lg">

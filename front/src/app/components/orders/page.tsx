@@ -20,7 +20,7 @@ interface OrdersListProps {
 }
 
 const OrdersList: React.FC<OrdersListProps> = ({ orders }) => {
-  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null); // Estado para manejar la orden seleccionada
+  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null); // Estado para manejar la orden seleccionada (ver mas detalles)
 
   const handleViewOrderDetails = (order: Order) => {
     setSelectedOrder(order);

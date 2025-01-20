@@ -2,11 +2,11 @@ import { IProducts } from "../components/cardProduct/interface";
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL
 
-export async function getProducts (): Promise<IProducts[]> {
+export async function getProducts(): Promise<IProducts[]> {
     try {
         const res = await fetch(`${apiURL}/products`, {
             method: "GET",
-            next: { revalidate : 3600 }
+            next: { revalidate : 3600 } //3600 (una hora)
 
         });
         const products: IProducts[] = await res.json();
@@ -27,3 +27,4 @@ export async function getProductsById(id : string) {
         throw new Error (error as string);
     }
 }
+

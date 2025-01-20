@@ -23,26 +23,26 @@ const Footer = () => {
             <ul>
 
               <li>
-                <Link href="/" className="text-black hover:text-red-600 transition-colors duration-300">
+                <Link href="/" className=" hover:text-sky-600 transition-colors duration-300">
                 Inicio
                 </Link>
               </li>
 
               <li>
-                <Link href="/product" className="hover:text-red-600 transition-colors duration-300">
+                <Link href="/product" className="hover:text-sky-600 transition-colors duration-300">
                   Productos
                 </Link>
               </li>
               
               <li>
-                <Link href="/about" className="hover:text-red-600 transition-colors duration-300">
+                <Link href="/about" className="hover:text-sky-600 transition-colors duration-300">
                   Sobre Nosotros
                 </Link>
               </li>
 
 
               <li>
-                <Link href="/shopping-cart" className="hover:text-red-600 transition-colors duration-300">
+                <Link href="/shopping-cart" className="hover:text-sky-600 transition-colors duration-300">
                   Carrito de Compras
                 </Link>
               </li>

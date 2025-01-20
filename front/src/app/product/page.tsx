@@ -1,13 +1,12 @@
 import React from "react";
-import { getProducts } from "../services/productServices";
-import { IProducts } from "../components/cardProduct/interface";
-import CardProduct from "../components/cardProduct/page";
+import { getProducts } from "@/app/services/productServices";
+import { IProducts } from "@/app/components/cardProduct/interface"; 
+import CardProduct from "@/app/components/cardProduct/page";
 
+//!Ver si no hay que hacerle con un useEffect
 
 export default async function Products() {
-  const products = await getProducts()
-
-  console.log('Productos obtenidos: ', products);
+  const products = await getProducts();
 
   return (
     <div className="container mx-auto p-4 py-4 mt-8">

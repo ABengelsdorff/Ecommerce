@@ -5,8 +5,8 @@ export const ValidationRegister = {
             message: "El nombre es requerido"
         },
         pattern: {
-            value: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras, acentos, espacios, longitud mínima 2, máxima 40.
-            message: "El nombre debe contener solo letras y tener entre 2 y 40 caracteres"
+            value: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras, acentos, espacios, longitud mínima 2, máxima 40.
+            message: "El nombre debe contener solo letras y tener entre 3 y 20 caracteres"
         }
     },
 
@@ -28,11 +28,11 @@ export const ValidationRegister = {
         },
         minLength: {
             value: 8,
-            message: "La contraseña debe tener como mínimo 8 caracteres"
+            message: "La contraseña debe tener como mínimo 8 caracteres, una letra mayúscula, una letra minúscula y un número."
         },
         pattern: { 
             value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{1,}$/,
-            message: "La contraseña debe tener al menos una letra mayúscula, una letra minúscula y un número."
+            message: "La contraseña debe tener como mínimo 8 caracteres, una letra mayúscula, una letra minúscula y un número."
         }
     },
 
@@ -41,7 +41,7 @@ export const ValidationRegister = {
             value: true,
             message: "La confirmación de la contraseña es requerida"
         },
-        validate: (value, allValues) => 
+        validate: (value:string, allValues: {password?:string}) => 
             value === allValues.password || "Las contraseñas no coinciden"
     },
     

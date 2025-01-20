@@ -27,7 +27,7 @@ export async function createOrderService(
     }
 };
 
-
+//Obtiene las ordenes asociadas a un usuario
 export async function getOrdersService(token: string) {
     try {
         const res = await fetch(`${apiUrl}/users/orders`, {

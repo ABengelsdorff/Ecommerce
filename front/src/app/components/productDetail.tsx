@@ -18,6 +18,7 @@ interface PropsProductDetail {
 
 const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
   const [producto, setProducto] = useState<IProducts | null>(null);
+  
   const { userData, cart, setCart } = useUserDataStore()
 
   const router = useRouter()
@@ -42,6 +43,7 @@ const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
       const productExist = cart.some(
         (product: IProducts) => product.id === producto.id
       );
+      
       if (productExist) {
 
         toast.error(`${producto.name}, ya existe en el carrito`, { duration: 3000,  style: {
@@ -115,11 +117,3 @@ const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
 }
 
 export default ProductDetail;
-
-
-
-
-
-
-
-

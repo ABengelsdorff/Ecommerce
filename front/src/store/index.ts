@@ -9,7 +9,7 @@ interface UserDataType{
     token:string,
 }
 
-
+//Estructura del estado global
 interface EcommerceStore {
     cart: IProducts[];
     setCart: (data: IProducts[]) => void;
@@ -17,6 +17,7 @@ interface EcommerceStore {
     setUserData: (data: UserDataType | null) => void;
 }
 
+//Creacion del estado global
 const useUserDataStore = create<EcommerceStore>()(
     devtools(
         persist(

@@ -33,11 +33,12 @@ const OrdersDetail: React.FC<OrdersDetailProps> = ({ order, onBack }) => {
     <li key={index} className="mb-4 flex items-center justify-between">
       {/* Contenedor para el texto */}
       <div className="flex-1 mr-4">
+
         <p className="font-semibold">{product.name}</p>
+        
         <p>Precio: ${product.price}</p>
-        <p>Total: ${product.price * product.quantity}</p>
       </div>
-      {/* Imagen */}
+      
       <img
         src={product.image}
         alt={product.name}
@@ -46,7 +47,6 @@ const OrdersDetail: React.FC<OrdersDetailProps> = ({ order, onBack }) => {
     </li>
   ))}
 </ul>
-
 
       <Button
   onClick={() => {

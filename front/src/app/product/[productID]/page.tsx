@@ -29,8 +29,6 @@ const Page = async ({ params }: PageProps) => {
   );
 };
 
-console.log(process.env.NEXT_PUBLIC_API_URL);
-
 
 export default Page;
 

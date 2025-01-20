@@ -7,11 +7,11 @@ import IRegisterData from "./InterfaceRegister";
 import { registerUserService } from "@/app/services/authServices"; 
 import { useRouter } from "next/navigation";
 import Swal from 'sweetalert2'
+import Link from "next/link";
 
 const RegisterForm = () => {
   const router = useRouter()
-  const {
-    handleSubmit, control, formState: { errors }} = useForm({
+  const { handleSubmit, control, formState: { errors }} = useForm({
     defaultValues: {
       name: "",
       email: "",
@@ -27,9 +27,7 @@ const RegisterForm = () => {
   const onSubmit = async (data: IRegisterData) => {
     const res = await registerUserService(data);
 
-
     if(res) 
-      
        Swal.fire({
               title: "Usuario creado correctamente!",
               icon: "success",
@@ -40,7 +38,6 @@ const RegisterForm = () => {
             });
       
     router.push("/login")
-    console.log(data);
   };
 
   return (
@@ -165,6 +162,9 @@ const RegisterForm = () => {
         )}
 
         <Button color="primary" variant="flat" type="submit">Registrarse</Button>
+
+        <p className="flex justify-center"> ¿Ya estás registrado? Inicia sesión <Link href="./login" className="text-blue-700 ml-1"> aquí</Link></p>
+
       </form>
     </div>
   );

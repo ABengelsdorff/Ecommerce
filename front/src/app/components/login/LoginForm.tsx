@@ -9,23 +9,21 @@ import useUserDataStore from "@/store";
 
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
 const LoginForm = () => {
   const router = useRouter();
   const { setUserData } = useUserDataStore();
 
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm({
+  const { handleSubmit, control, formState: { errors }} = useForm({
     defaultValues: {
       email: "",
       password: "",
     },
-    mode: "onChange",
+    mode: "onChange", //Valida los campos conforme el usuario escribe
   });
 
+  
   const onSubmit = async (data: IFromData) => {
     try {
       const response = await loginService(data);
@@ -103,6 +101,9 @@ const LoginForm = () => {
         <Button color="primary" variant="flat" type="submit">
           Acceder
         </Button>
+        
+        <p className="flex justify-center"> ¿Aún no te has registrado? Regístrate <Link href="./register" className="text-blue-700 ml-1"> aquí</Link></p>
+
       </form>
     </div>
   );
