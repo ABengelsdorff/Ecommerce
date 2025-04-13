@@ -3,7 +3,6 @@ import { getProducts } from "@/app/services/productServices";
 import { IProducts } from "@/app/components/cardProduct/interface"; 
 import CardProduct from "@/app/components/cardProduct/page";
 
-//!Ver si no hay que hacerle con un useEffect
 
 export default async function Products() {
   const products = await getProducts();

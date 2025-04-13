@@ -25,7 +25,7 @@ const Home = () => {
               </div>
               <Image
                 isZoomed
-                alt="Card background"
+                alt="El legado de Apple"
                 className="w-110 h-80 object-cover rounded-lg"
                 src="https://onetech.pl/wp-content/uploads/2024/04/Apple-1.jpg"
               />
@@ -39,7 +39,7 @@ const Home = () => {
               </div>
               <Image
                 isZoomed
-                alt="Card background"
+                alt="Innovación robótica"
                 className="w-110 h-80 object-cover rounded-lg"
                 src="https://i.blogs.es/80d0bf/iphone-ai-on-device-alt/500_333.webp"
               />
@@ -53,7 +53,7 @@ const Home = () => {
               </div>
               <Image
                 isZoomed
-                alt="Card background"
+                alt="Tecnología del mañana"
                className="w-110 h-80 object-cover rounded-lg"
                 src="https://images.unian.net/photos/2019_09/thumb_files/800_0_1568152604-4450.JPG?0.5216978511062438"
               />
@@ -67,7 +67,7 @@ const Home = () => {
               </div>
               <Image
                 isZoomed
-                alt="Card background"
+                alt="El poder de la creatividad"
                className="w-110 h-80 object-cover rounded-lg"
                 src="https://nextui.org/images/hero-card-complete.jpeg"
               />
@@ -81,7 +81,7 @@ const Home = () => {
               </div>
               <Image
                 isZoomed
-                alt="Card background"
+                alt="Ciberseguridad avanzada"
                 className="w-110 h-80 object-cover rounded-lg"
                 src="https://blog.underc0de.org/wp-content/uploads/2022/03/september2021__f5zmksnt6cuq_og.jpg"
               />
@@ -95,7 +95,7 @@ const Home = () => {
               </div>
               <Image
                 isZoomed
-                alt="Card background"
+                alt="El universo tecnológico"
                 className="w-110 h-80 object-cover rounded-lg"
                 src="https://lamanzanamordida.net/app/uploads-lamanzanamordida.net/2024/04/iPhone-e-iPad-y-accesorios.png"
               />

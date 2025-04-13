@@ -19,6 +19,7 @@ function CartProducts() {
   // validar usuario
   const isUserAuthenticated = userData?.user && userData?.token;
 
+
   useEffect(() => {
     if (cart.length === 0) {
       setTotalPrecio(0);
@@ -28,8 +29,9 @@ function CartProducts() {
     setTotalPrecio(total);
   }, [cart]);
 
+
   const removeFromCart = (productId: number) => {
-    const updatedCart = cart.filter((product: IProducts) => product.id !== productId);
+    const updatedCart = cart.filter((product: IProducts) => product.id !== productId); //Los productos cuyo id no sean iguales se incluiran en el nuevo array
     setCart(updatedCart);
   };
 
@@ -44,7 +46,8 @@ function CartProducts() {
         return;
       }
 
-      const idProducts = cart.map((product: IProducts) => product.id).filter((id): id is number => id !== undefined);
+      //transformar el array de productos (cart) en un array de IDs
+      const idProducts = cart.map((product: IProducts) => product.id).filter((id): id is number => id !== undefined); //: id is number: indica que el resultado va a ser una [] de numeros
 
   // Validar datos del usuario
   const userId = userData?.user?.id;
@@ -92,6 +95,7 @@ function CartProducts() {
     }
   };
 
+
   if(!userData?.user || !userData?.token){
     return (
       <div className="flex items-center justify-center h-screen flex-col">
@@ -104,8 +108,8 @@ function CartProducts() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 max-w-7xl mx-auto">
+
       {/* Primera columna: Productos */}
-      
       <div className="col-span-2 space-y-4">
         {cart.length === 0 ? (
           <p className="text-gray-500 flex items-center justify-center h-full">Tu carrito está vacío.</p>

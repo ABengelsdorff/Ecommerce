@@ -17,7 +17,7 @@ interface PropsProductDetail {
 }
 
 const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
-  const [producto, setProducto] = useState<IProducts | null>(null);
+  const [producto, setProducto] = useState<IProducts | null>(null); //Almacena los datos del producto a medida que se carguen
   
   const { userData, cart, setCart } = useUserDataStore()
 
@@ -71,7 +71,7 @@ const ProductDetail: React.FC<PropsProductDetail> = ({ id }) => {
     }
   };
  
-
+//Cargar los productos cuando cambia el id
   useEffect(() => {
     const fetchData = async () => {
       try {

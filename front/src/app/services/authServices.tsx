@@ -4,6 +4,7 @@ import IRegisterData from "../components/register/InterfaceRegister";
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL
 
+//Enviar datos del registro de un usuario
 export async function registerUserService(userData: IRegisterData) {
     try {
 
@@ -12,7 +13,7 @@ export async function registerUserService(userData: IRegisterData) {
             headers: {
                 "Content-Type" : "application/json",
             },
-            body: JSON.stringify(userData),
+            body: JSON.stringify(userData), //agrega  los datos del usuario al cuerpo de la solicitud
         });
 
         if(response.ok) {
@@ -27,7 +28,7 @@ export async function registerUserService(userData: IRegisterData) {
     }
 }
 
-
+//Enviar datos del inicio de sesion
 export async function loginService(userData: IFromData) {
     try {
 

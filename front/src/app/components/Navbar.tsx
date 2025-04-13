@@ -22,14 +22,16 @@ import { ShoppingCart } from "lucide-react";
 const NavbarMain = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { cart, userData, setUserData } = useUserDataStore();
+  const { cart, setCart, userData, setUserData } = useUserDataStore();
 
+  //Cerrar sesión
   const handleLogout = () => {
     if (typeof window !== "undefined") {
       sessionStorage.removeItem("token"); // Elimina el token
     }
-    setUserData(null); // Limpia el estado de usuario
-    router.push("/"); // Redirige al inicio
+    setUserData(null); 
+    setCart([]);
+    router.push("/"); 
   };
 
   return (

@@ -3,6 +3,7 @@ import IRegisterData from "@/app/components/register/InterfaceRegister";
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
+//Datos del usuario
 interface UserDataType{
     login:boolean,
     user: IRegisterData
@@ -19,7 +20,7 @@ interface EcommerceStore {
 
 //Creacion del estado global
 const useUserDataStore = create<EcommerceStore>()(
-    devtools(
+    devtools( 
         persist(
             (set) => ({
                 userData: {
@@ -35,12 +36,12 @@ const useUserDataStore = create<EcommerceStore>()(
                     token:"",
                 },
                 cart: [],
-                setCart: (data) => set({ cart: data }),
-                setUserData: (data) => set({userData : data}),
+                setCart: (data) => set({ cart: data }), //Actualiza el carrito con los productos
+                setUserData: (data) => set({userData : data}), //Actualiza los datos del usuario
             }),
             {
                 name: "ecommerce-storage",
-                storage: createJSONStorage( () => sessionStorage), //AQUI PODRIA SER UN LocalStorage
+                storage: createJSONStorage( () => sessionStorage), 
             }
         )
     )

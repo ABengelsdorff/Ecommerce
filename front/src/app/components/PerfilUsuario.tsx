@@ -11,18 +11,20 @@ const PerfilUsuario: React.FC = () => {
 
   //Memoriza la función getOrders y evita que cambie en cada renderización. A menos que cambie la dependencia(token)
   const getOrders = useCallback(async () => {
-    if (!userData?.token) return; // Asegúrate de que token esté definido
+    if (!userData?.token) return; // Asegura de que token esté definido
     try {
       const res = await getOrdersService(userData.token);
       setOrders(res);
     } catch (error) {
-      console.error("Error fetching orders:", error); //!ver este console.log
+      console.error("Error fetching orders:", error);
     }
   }, [userData?.token]);
+
 
   useEffect(() => {
     getOrders();
   }, [getOrders]);
+
 
 
   if (!userData?.user) {

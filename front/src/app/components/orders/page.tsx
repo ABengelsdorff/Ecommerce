@@ -22,9 +22,11 @@ interface OrdersListProps {
 const OrdersList: React.FC<OrdersListProps> = ({ orders }) => {
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null); // Estado para manejar la orden seleccionada (ver mas detalles)
 
+
   const handleViewOrderDetails = (order: Order) => {
     setSelectedOrder(order);
   };
+
 
   const handleBackToOrdersList = () => {
     setSelectedOrder(null);
@@ -37,6 +39,7 @@ const OrdersList: React.FC<OrdersListProps> = ({ orders }) => {
     // Si hay una orden seleccionada, mostrar el detalle
     return <OrdersDetail order={selectedOrder} onBack={handleBackToOrdersList} />;
   }
+  
 
   // Si no hay orden seleccionada, mostrar la lista de órdenes
   return (

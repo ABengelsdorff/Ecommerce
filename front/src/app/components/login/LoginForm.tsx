@@ -55,6 +55,7 @@ const LoginForm = () => {
     }
   };
 
+
   return (
     <div className="flex items-start justify-center h-screen bg-gray-100">
       <form
@@ -65,11 +66,11 @@ const LoginForm = () => {
 
         <Controller
           name="email"
-          control={control}
-          rules={ValidationRules.email}
+          control={control} //Gestiona el estado y validacion del input
+          rules={ValidationRules.email} 
           render={({ field }) => (
             <Input
-              {...field}
+              {...field} //Propiedades y metodos para el control del campo.
               type="email"
               label="Email"
               variant="bordered"

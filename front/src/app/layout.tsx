@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Innova",
   description: "Tienda tecnológica con lo último en innovación.",
 };
-
+//componentes globales de la aplicacion 
 export default function RootLayout({
   children,
 }: Readonly<{

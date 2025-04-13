@@ -5,7 +5,7 @@ export const ValidationRegister = {
             message: "El nombre es requerido"
         },
         pattern: {
-            value: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras, acentos, espacios, longitud mínima 2, máxima 40.
+            value: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras, acentos, espacios, longitud mínima 3, máxima 20.
             message: "El nombre debe contener solo letras y tener entre 3 y 20 caracteres"
         }
     },

@@ -2,6 +2,7 @@ import { IProducts } from "../components/cardProduct/interface";
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL
 
+//Optener los productos
 export async function getProducts(): Promise<IProducts[]> {
     try {
         const res = await fetch(`${apiURL}/products`, {
@@ -17,6 +18,7 @@ export async function getProducts(): Promise<IProducts[]> {
     }
 }
 
+//Obtener un producto por id
 export async function getProductsById(id : string) {
     try {
         const products = await getProducts();

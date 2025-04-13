@@ -2,14 +2,14 @@ import ProductDetail from "@/app/components/productDetail";
 import React from "react";
 
 interface PageProps {
-  params: Promise<{ productID: string }>; //! Acá indica que params es una promesa
+  params: Promise<{ productID: string }>; // Acá indica que params es una promesa
 }
 
 const Page = async ({ params }: PageProps) => {
 
   console.log("Params recibidos:", params);
  
-  const resolvedParams = await params; //! Espera a que params se resuelva
+  const resolvedParams = await params; // Espera a que params se resuelva
   const productID = resolvedParams.productID;
   
 
