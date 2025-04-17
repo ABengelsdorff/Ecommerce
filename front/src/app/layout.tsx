@@ -6,9 +6,9 @@ import Nav from "./components/nav";
 import { ThemeProvider } from "./components/theme-provider"; 
 import { Toaster } from 'sonner'
 // import { MouseGradientEffect } from "./components/mouse-gradient-effect";
-
 // import Ballpit from "./components/Ballpit";
 
+// import BubbleBackground from "./components/bubble-background";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* <BubbleBackground /> */}
         <Toaster position="top-center" />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         {/* <MouseGradientEffect /> */}

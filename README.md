@@ -1,85 +1,50 @@
-# 🛒 Ecommerce INNOVA
+# 🌐 Portafolio de Angélica Bengelsdorff
 
-**Ecommerce INNOVA** es una plataforma de comercio electrónico desarrollada con tecnologías modernas, enfocada en ofrecer una experiencia de usuario fluida e intuitiva. El proyecto cuenta con funcionalidades esenciales como registro e inicio de sesión, carrito de compras y gestión de productos.
+![Vista previa del sitio](./public/preview.png)
+
+Este es mi portafolio personal como desarrolladora web Full Stack. Lo desarrollé desde cero con enfoque en la accesibilidad, el diseño moderno, el rendimiento y una experiencia de usuario atractiva y profesional.
 
 ---
 
 ## 🚀 Tecnologías utilizadas
 
-### 🧠 Backend
-- **Node.js + Express**
-- **TypeORM**
-- **PostgreSQL**
-- **JWT** para autenticación
-- **Swagger** para documentación de API
-- **bcrypt** para hashing de contraseñas
-
-### 💻 Frontend
-- **React (Next.js 15)**
+- **Next.js 15 + React 18**
 - **TypeScript**
 - **TailwindCSS**
-- **Zustand** para manejo de estado global
-- **React Hook Form** para formularios
-- **Styled Components**
-- **Lucide Icons, Framer Motion, SweetAlert2**
+- **Framer Motion** – animaciones fluidas
+- **GSAP + Three.js** – efectos visuales 3D y de movimiento
+- **Lucide Icons** – íconos modernos y accesibles
+- **React Hook Form** – manejo de formularios
+- **SweetAlert2** – alertas interactivas
+- **Sonner** – notificaciones simples y rápidas
+- **NextUI** – componentes visuales estilizados
+- **Radix UI + CVA** – patrones accesibles y estilos con variantes
 
 ---
 
-## 🔐 Funcionalidades principales
+## 🎯 ¿Qué vas a encontrar?
 
-- Registro y login de usuarios
-- Gestión del estado de sesión
-- Carrito de compras persistente
-- Visualización de productos
-- Página de perfil de usuario
-- Animaciones y alertas personalizadas
-
----
-
-## 🛠️ Cómo correr el proyecto localmente
-
-### Requisitos
-- Node.js v18+
-- PostgreSQL
-
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/ABengelsdorff/Ecommerce.git
-cd Ecommerce
-```
-
-### 2. Configurar y ejecutar el backend
-
-```bash
-cd back
-npm install
-# Crear archivo .env con variables de conexión (DB_HOST, DB_PORT, DB_USERNAME, etc.)
-npm start
-```
-
-### 3. Configurar y ejecutar el frontend
-
-```bash
-cd ../front
-npm install
-npm run dev
-```
+- Secciones animadas e interactivas
+- Información sobre mí, habilidades y proyectos destacados
+- Animaciones con GSAP y Three.js para destacar visualmente
+- Navegación fluida con diseño responsivo
+- UI/UX moderno optimizado para desktop y mobile
 
 ---
 
-## 📌 Estado del proyecto
-
-🔧 En desarrollo. Próximamente estará disponible online.
-
----
-
-## 👩‍💻 Autor/a
+## 👩‍💻 Autora
 
 Desarrollado por [Angélica Bengelsdorff](https://www.linkedin.com/in/angelica-bengelsdorff)
 
 ---
 
+## 🔗 En línea
+
+📌 [Ver sitio desplegado](https://tu-url-en-vercel.vercel.app)  
+*(Reemplazá esto con tu link real de Vercel una vez que esté desplegado)*
+
+---
+
 ## 📄 Licencia
 
-Este proyecto se encuentra bajo la licencia MIT.
+Este proyecto se encuentra bajo la licencia **MIT**.
